@@ -92,14 +92,52 @@ nav{
 .call-to-action-text p{
     width:90%;
     color:hsl(257, 7%, 63%);
-    margin-bottom:10%;
 }
+
+.call-to-action-text .animated{
+    margin-bottom: 7%;
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+}
+.call-to-action-text .animated p{
+    color: black;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1px;
+}
+
+/* ANIMATION */
+.call-to-action-text .animated p:nth-child(1) {
+    animation: move 10s infinite;
+}
+
+@keyframes move {
+    0% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -70px;
+    }
+    50% {
+        margin-top: -140px;
+    }
+    75% {
+        margin-top: -70px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
 .call-to-action-text a{
     background-color:hsl(180, 66%, 49%);
     padding:2% 10%;
     border-radius:30px;
     color:white;
     text-decoration: none;
+    
 }
 .call-to-action-text a:hover{
     background-color: rgb(155, 227, 227);
