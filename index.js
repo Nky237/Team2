@@ -55,12 +55,14 @@ try {
   newUrl.innerHTML = ` 
  <p> ${data.result.short_link}</p>
  <button class="btn-list" >Copy</button>
+ <button class="btn-del" >Delete</button>
  `;
   result.prepend(newUrl);
 
   // Copy-Button Interaction
   const copyBtn = result.querySelector(".btn-list");
-
+  const delBtn = result.querySelector(".btn-del")
+ 
   copyBtn.addEventListener("click", (e) => {
     if(e.target.classList.contains('btn-list')){
       navigator.clipboard.writeText(copyBtn.previousElementSibling.textContent);
@@ -75,7 +77,17 @@ try {
       }, 1000);
     }
   });
+
+  delBtn.addEventListener("click", (e)=>{
+    if(e.target.classList.contains('btn-del')){
+      newUrl.style.display = 'none'
+    }
+    })
+  
+
+
   input.value = "";
+  
 } catch (err) {
   console.log(err);
 }
